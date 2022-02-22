@@ -6,13 +6,13 @@ function Song({order,track}){
                 <img className="h-10 w-10" src={track.track.album.images[0].url} alt="" />
                 <div>
                     <p>{track.track.name}</p>
-                    <p>{track.track.artists[0].name}</p>
+                    <p className="opacity-70">{track.track.artists[0].name}</p>
                 </div>
             </div>
 
             <div className="flex items-center justify-between ml-auto md:ml-0">
-                <p className="hidden md:inline">{track.track.album.name}</p>
-                <p>duration</p>
+                <p className="hidden md:inline opacity-70">{track.track.album.name}</p>
+                <p className="opacity-70">duration</p>
             </div>
         </div>
     )
