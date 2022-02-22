@@ -20,6 +20,7 @@ function Sidebar() {
     useEffect(() => {
         if(spotifyApi.getAccessToken()){
             spotifyApi.getUserPlaylists().then(data => {
+                // console.log(data);
                 setPlaylists(data.body.items);
             })
         }
@@ -27,7 +28,7 @@ function Sidebar() {
     // console.log(playlists)
 
     return (
-        <div className='text-gray-500 p-5 text-sm border-r border-gray-900 overflow-y-scroll h-screen scrollbar-hide'>
+        <div className='text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll h-screen scrollbar-hide sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex'>
             <div className="space-y-4">
                 <button className='flex items-center space-x-2 hover:text-white'>
                     <HomeIcon className='h-5 w-5'/>
@@ -55,8 +56,8 @@ function Sidebar() {
                     <p>Your episodes</p>
                 </button>
                 <hr className='border-t-[0.1px] border-gray-900'/>
-                <p className='cursor-pointer hover:text-white'>21</p>
-                <p className='cursor-pointer hover:text-white'>Old</p>
+                {/* <p className='cursor-pointer hover:text-white'>21</p>
+                <p className='cursor-pointer hover:text-white'>Old</p> */}
                 {playlists.map((playlist) => (      
                     <p className='cursor-pointer hover:text-white' onClick={()=>setPlaylistId(playlist.id)} key={playlist.id}>{playlist.name}</p>
                 ))}
