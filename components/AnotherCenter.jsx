@@ -8,17 +8,17 @@ import spotifyApi from '../lib/spotify';
 import Songs from './Songs';
 
 const colors = [
-    'indigo-500',
-    'blue-500',
-    'green-500',
-    'yellow-500',
-    'orange-500',
-    'red-500',
-    'purple-500',
-    'pink-500',
+    'from-indigo-500',
+    'from-blue-500',
+    'from-green-500',
+    'from-yellow-500',
+    'from-orange-500',
+    'from-red-500',
+    'from-purple-500',
+    'from-pink-500',
 ]
 
-function Center(){
+function AnotherCenter(){
     const {data: session} = useSession();
     const[color,setColor] = useState(null);
     const playlistId = useRecoilValue(playlistIdState);
@@ -38,16 +38,16 @@ function Center(){
 
     return(
         <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
-            <header className={`absolute top-0 right-0 text-white h-[75px] w-full md:w-[81.5vw] lg:w-[85vw] xl:w-[88.6vw] pl-auto pt-3 pr-7 bg-gradient-to-b to-${color} from-${color}`}>
+            <header className='absolute top-5 right-8 text-white'>
                 <div onClick={()=>signOut()} className='flex items-center bg-black space-x-3 opacity-90
-                hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 h-10 w-25 absolute right-3'>
-                    <img className='rounded-full w-9 h-9' src={session?.user.image} alt="" />
+                hover:opacity-80 cursor-pointer rounded-full p-1 pr-2'>
+                    <img className='rounded-full w-10 h-10' src={session?.user.image} alt="" />
                     <h2>{session?.user.name}</h2>
                     <ChevronDownIcon className='h-5 w-5'/>
                 </div>
             </header>
 
-            <section className={`flex items-end space-x-7 bg-gradient-to-b to-black from-${color} h-80 text-white p-8`}>
+            <section className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8`}>
                 <img src={playlist?.images?.[0]?.url} className='h-44 w-44 shadow-2xl' alt="" />
                 <div>
                     <p>PLAYLIST</p>
@@ -60,4 +60,4 @@ function Center(){
         </div>
     )
 }
-export default Center;
+export default AnotherCenter;
