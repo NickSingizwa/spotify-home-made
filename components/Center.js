@@ -38,9 +38,9 @@ function Center(){
 
     return(
         <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
-            <header className={`absolute top-0 right-0 text-white h-[75px] w-full md:w-[81.5vw] lg:w-[85vw] xl:w-[88.6vw] pl-auto pt-3 pr-7 bg-gradient-to-b to-${color} from-${color}`}>
+            <header className={`absolute top-0 right-0 text-white h-[75px] w-full bg-gradient-to-b to-${color} from-${color} md:bg-none lg:bg-none xl:bg-none pl-auto pt-3 pr-7`}>
                 <div onClick={()=>signOut()} className='flex items-center bg-black space-x-3 opacity-90
-                hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 h-10 w-25 absolute right-3'>
+                        hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 h-10 w-25 absolute right-3'>
                     <img className='rounded-full w-9 h-9' src={session?.user.image} alt="" />
                     <h2>{session?.user.name}</h2>
                     <ChevronDownIcon className='h-5 w-5'/>
